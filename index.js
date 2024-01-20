@@ -80,3 +80,20 @@ document.querySelector('.search-bar').addEventListener("keydown", function (e) {
     }
 })
 weather.fetchWeather("hamilton")
+
+const url3 = 'https://ronreiter-meme-generator.p.rapidapi.com/meme?top=Top%20Text&bottom=Bottom%20Text&meme=Condescending-Wonka&font_size=50&font=Impact';
+const options3 = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '53aac64b09mshcc81f7a23f2a4a8p181155jsn5800e4f73360',
+		'X-RapidAPI-Host': 'ronreiter-meme-generator.p.rapidapi.com'
+	}
+};
+let getmeme=()=>{
+    fetch(url3,options3)
+    .then(data=>data.json())
+    .then(item=>{
+        quotecontainer.textContent=`${item.text}`
+    })
+
+}
