@@ -1,17 +1,84 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+.card {
+    background: #060606;
+    color:white;
+    padding: 2em;
+    border-radius: 30px;
+    width: 100%;
+    max-width:420px;
+    margin:1em;
+}
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.wrapper{
-    width: 80vmin;
-    padding: 50px 40px;
-    background-color: beige;
-    position:absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    border-radius: 5px;
-    box-shadow: 20px 20px 40px rgba(r, green, blue, alpha) ;
+button {
+    margin: 0.5em;
+    border-radius: 50%;
+    border: none;
+    height: 44px;
+    width: 464x;
+    outline: none;
+    background: #7c7c7c2b;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+input.search-bar {
+    border: none;
+    outline: none;
+    padding: 0.4em 1em;
+    border-radius: 24px;
+    background: #7c7c7c2b;
+    color: white;
+    font-family: inherit;
+    font-size: 105%;
+    width:calc(100%-80px);
+}
+.city{
+    text-align: center;
+}
+button:hover {
+    background: #7c7c7c2b;
+}
+
+button:hover {
+    background: #7c7c7c6b;
+}
+
+h1.temp{
+    margin:0;
+    text-align: center;
+
+}
+.description {
+    text-transform: capitalize;
+    text-align: center;
+}
+.flex{
+    align-items: center;
+   
+    text-align: center;
+}
+.humidity{
+    text-align: center;
+}
+.wind{
+    text-align: center;
+}
+
+.weather.loading{
+    visibility: hidden;
+    max-height: 20px;
+    position: absolute;
+}
+
+.weather.loading:after{
+    visibility: visible;
+    content: "Loading .......";
+    color: white;
+    position: relative;
+    top: 0;
 }
