@@ -1,3 +1,7 @@
+body{
+display: flex;
+justify-content: space-around; 
+}
 .card {
     background: #060606;
     color:white;
