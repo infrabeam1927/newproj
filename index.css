@@ -1,21 +1,27 @@
-body{
-display: flex;
-justify-content: space-around; 
-align-items: center;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #060606;
 }
+
 .card {
     background: #060606;
-    color:white;
+    color: white;
     padding: 2em;
     border-radius: 30px;
     width: 100%;
-    max-width:420px;
-    margin:1em;
+    max-width: 420px;
+    margin: 1em;
+    text-align: center;
 }
-.search{
+
+.search {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 button {
@@ -30,22 +36,23 @@ button {
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
+
 .btn2 {
-    width: 120px; /* Adjust the width as needed */
-    height: 50px; /* Adjust the height as needed */
+    width: 100%;
+    height: 50px;
     border: none;
-    background-color: #007BFF; /* Set your desired background color */
+    background-color: #007BFF;
     color: white;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 5px; /* Add border-radius for rounded corners if you like */
+    border-radius: 5px;
 }
 
 .btn2:hover {
-    background-color: #0056b3; /* Change color on hover */
+    background-color: #0056b3;
 }
 
 input.search-bar {
@@ -57,48 +64,40 @@ input.search-bar {
     color: white;
     font-family: inherit;
     font-size: 105%;
-    width:calc(100% - 80px);
-}
-.city{
-    text-align: center;
-}
-button:hover {
-    background: #7c7c7c2b;
+    width: 100%;
 }
 
-
-
-h1.temp{
-    margin:0;
-    text-align: center;
-
-}
-.description {
-    text-transform: capitalize;
-    text-align: center;
-}
-.flex{
-    align-items: center;
-   
-    text-align: center;
-}
-.humidity{
-    text-align: center;
-}
-.wind{
-    text-align: center;
-}
-
-.weather.loading{
+.weather.loading {
     visibility: hidden;
     max-height: 20px;
     position: absolute;
 }
 
-.weather.loading:after{
+.weather.loading:after {
     visibility: visible;
     content: "Loading .......";
     color: white;
     position: relative;
     top: 0;
 }
+
+@media only screen and (min-width: 600px) {
+    body {
+        background-color: #060606;
+    }
+
+    .card {
+        max-width: 600px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .search {
+        flex-direction: row;
+    }
+
+    input.search-bar {
+        margin-right: 1em;
+    }
+}
+
