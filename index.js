@@ -76,7 +76,9 @@ document.querySelector(".search button").addEventListener("click",function(){
 })
 document.querySelector('.search-bar').addEventListener("keydown", function (e) {
     if (e.keyCode === 13) {      
-        weather.search();             
+        weather.search(); 
+        getQuote();     
+        getJoke();       
     }
 })
 weather.fetchWeather("hamilton")
