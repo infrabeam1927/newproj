@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlElement">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random App</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <style>
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .card.dark-mode {
+            background-color: #444;
+            border: 1px solid #666;
+        }
+
+        /* Add more dark mode styles as needed */
+        
+        /* Switch styles */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Dark mode switch -->
+    <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider round"></span>
+    </label>
+
+    <div class="card">
+        <span>&#128514;</span>
+        <p id="joke"></p>
+        <button class="btn2" id="btn">Get Random Joke</button>
+    </div>
+    <div class="weather loading">
+        <h2 class='city'>Weather in Hamilton</h2>
+        <h1 class="temp">20°C</h1>
+        <div class="flex">
+            <img src="https://openweathermap.org/img/wn/02d.png" alt="" class='icon'/>
+            <div class="description">Cloudy</div>
+        </div>
+        <div class="humidity">Humidity : 50%</div>
+        <div class="wind">Wind speed : 60 km/h</div>
+    </div>
+</div>    
+    
+    <div class="card">
+        <span>&#129299;</span>
+        <p id="quote"></p>
+        <button class="btn2" id="btn1">Get Random quote</button>
+    </div>
+
+    <script src="index.js"></script>
+    <script>
+        const htmlElement = document.getElementById('htmlElement');
+        const darkModeToggle = document.getElementById('darkModeToggle');
+
+        darkModeToggle.addEventListener('change', () => {
+            htmlElement.classList.toggle('dark-mode', darkModeToggle.checked);
+        });
+    </script>
+</body>
+</html>
